@@ -2,7 +2,7 @@
 
 require 'forwardable'
 
-require_relative 'wsdldocument'
+require_relative 'wsdl/document'
 
 module SoapWs
   ##
@@ -34,7 +34,7 @@ module SoapWs
       def_delegators :@wsdl_document, :operations
 
       def initialize
-        @wsdl_document = WSDLDocument.new(self.class.wsdl_url)
+        @wsdl_document = WSDL::Document.new(self.class.wsdl_url)
       end
 
       private

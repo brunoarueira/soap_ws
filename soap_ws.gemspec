@@ -28,6 +28,9 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'faraday'
   spec.add_runtime_dependency 'ox'
 
+  spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'rubocop-performance'
+  spec.add_development_dependency 'rubocop-rspec'
   spec.add_development_dependency 'vcr'
   spec.add_development_dependency 'webmock'
 end

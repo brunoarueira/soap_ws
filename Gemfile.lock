@@ -10,6 +10,7 @@ GEM
   specs:
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    ast (2.4.2)
     crack (0.4.5)
       rexml
     diff-lcs (1.4.4)
@@ -21,8 +22,13 @@ GEM
     hashdiff (1.0.1)
     multipart-post (2.1.1)
     ox (2.14.1)
+    parallel (1.20.1)
+    parser (3.0.0.0)
+      ast (~> 2.4.1)
     public_suffix (4.0.6)
+    rainbow (3.0.0)
     rake (12.3.3)
+    regexp_parser (2.0.3)
     rexml (3.2.4)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
@@ -37,7 +43,26 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
+    rubocop (1.9.1)
+      parallel (~> 1.10)
+      parser (>= 3.0.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml
+      rubocop-ast (>= 1.2.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.4.1)
+      parser (>= 2.7.1.5)
+    rubocop-performance (1.9.2)
+      rubocop (>= 0.90.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
+    rubocop-rspec (2.2.0)
+      rubocop (~> 1.0)
+      rubocop-ast (>= 1.1.0)
+    ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.4)
+    unicode-display_width (2.0.0)
     vcr (6.0.0)
     webmock (3.11.2)
       addressable (>= 2.3.6)
@@ -50,6 +75,9 @@ PLATFORMS
 DEPENDENCIES
   rake (~> 12.0)
   rspec (~> 3.0)
+  rubocop
+  rubocop-performance
+  rubocop-rspec
   soap_ws!
   vcr
   webmock

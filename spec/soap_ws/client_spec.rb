@@ -11,7 +11,7 @@ end
 RSpec.describe SoapWs::Client do
   subject(:web_service) { Calculator.new }
 
-  describe '.wsdl_location' do
+  describe '.wsdl' do
     it 'appends wsdl if the url provided does not have one' do
       location = Class.new do
         include SoapWs::Client
