@@ -1,6 +1,7 @@
-require "soap_ws/version"
+# frozen_string_literal: true
+
+require 'soap_ws/version'
 
 module SoapWs
-  class Error < StandardError; end
-  # Your code goes here...
+  autoload :Client, 'soap_ws/client'
 end
