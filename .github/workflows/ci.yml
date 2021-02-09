@@ -1,5 +1,9 @@
 name: CI
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 jobs:
   lint:
     strategy:
@@ -17,6 +21,7 @@ jobs:
     - run: bundle exec rubocop
 
   test:
+    needs: lint
     strategy:
       fail-fast: false
       matrix:
