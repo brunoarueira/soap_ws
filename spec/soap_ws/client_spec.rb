@@ -34,7 +34,7 @@ RSpec.describe SoapWs::Client do
 
     it 'raise an error if the wsdl is not over http or https' do
       expect do
-        location = Class.new do
+        Class.new do
           include SoapWs::Client
 
           wsdl 'test.wsdl'
