@@ -31,6 +31,16 @@ RSpec.describe SoapWs::Client do
 
       expect(location.wsdl_url).to eq 'http://www.dneonline.com/calculator.asmx?wsdl'
     end
+
+    it 'raise an error if the wsdl is not over http or https' do
+      expect do
+        location = Class.new do
+          include SoapWs::Client
+
+          wsdl 'test.wsdl'
+        end
+      end.to raise_error(SoapWs::InvalidWebServiceURI)
+    end
   end
 
   describe '#operations' do

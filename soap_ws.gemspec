@@ -25,6 +25,7 @@ Gem::Specification.new do |spec|
   end
   spec.require_paths = ['lib']
 
+  spec.add_runtime_dependency 'addressable'
   spec.add_runtime_dependency 'faraday'
   spec.add_runtime_dependency 'ox'
 

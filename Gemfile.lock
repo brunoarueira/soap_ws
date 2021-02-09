@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     soap_ws (0.1.0)
+      addressable
       faraday
       ox
 

@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
+require 'addressable/uri'
 require 'forwardable'
 
+require_relative 'errors'
 require_relative 'wsdl/document'
 
 module SoapWs
@@ -19,11 +21,17 @@ module SoapWs
       attr_reader :wsdl_url
 
       def wsdl(wsdl_url)
-        @wsdl_url = if wsdl_url.end_with?('?wsdl')
-                      wsdl_url
-                    else
-                      "#{wsdl_url}?wsdl"
-                    end
+        @wsdl_url = format_wsdl_url(wsdl_url)
+      end
+
+      private
+
+      def format_wsdl_url(wsdl_url)
+        uri = Addressable::URI.parse(wsdl_url)
+
+        raise SoapWs::InvalidWebServiceURI unless uri.scheme == 'http' || uri.scheme == 'https'
+
+        wsdl_url.end_with?('?wsdl') ? wsdl_url : "#{wsdl_url}?wsdl"
       end
     end
 
